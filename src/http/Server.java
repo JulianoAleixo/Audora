@@ -3,6 +3,8 @@ package http;
 import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.net.InetSocketAddress;
+
+import controller.FollowController;
 import controller.UserController;
 
 public class Server {
@@ -12,6 +14,7 @@ public class Server {
         server = HttpServer.create(new InetSocketAddress(8080), 0);
 
         server.createContext("/users", new UserController());
+        server.createContext("/follows", new FollowController());
 
         server.setExecutor(null);
         System.out.println("Server started on http://localhost:8080");
