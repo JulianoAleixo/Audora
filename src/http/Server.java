@@ -22,6 +22,7 @@ public class Server {
         server.createContext("/reviews", new ReviewController());
         server.createContext("/review_likes", new ReviewLikeController());
         server.createContext("/playlists", new PlaylistController());
+        server.createContext("/playlist_tracks", new PlaylistTrackController());
 
         server.setExecutor(null);
         System.out.println("Server started on http://localhost:8080");
